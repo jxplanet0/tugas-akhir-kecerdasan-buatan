@@ -1,0 +1,11 @@
+bawahan(adi,burhan). %burhan adalah bawahan dari adi
+bawahan(burhan,bahrun).
+bawahan(burhan,bisrin).
+bawahan(bahrun,farah).
+bawahan(bahrun,fahri).
+bawahan(bisrin,ferdi).
+bawahan_langsung(X,Y):-bawahan(X,Y).
+atasan_langsung(X,Y):-bawahan(Y,X). 
+anak_buah_bawahan(X,Y):-bawahan_langsung(X,Y).
+anak_buah_bawahan(X,Y):-bawahan_langsung(X,Z),anak_buah_bawahan(Z,Y).
+
